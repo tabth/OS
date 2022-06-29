@@ -1,6 +1,7 @@
 #include <stdint.h>
 #include <stddef.h>
-#include <limine.h>
+
+#include "include/limine.h"
 
 static volatile struct limine_terminal_request terminal_request = {
     .id = LIMINE_TERMINAL_REQUEST,
