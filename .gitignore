@@ -30,3 +30,8 @@
 *.exe
 *.out
 *.app
+
+*.iso
+
+build/iso_root
+.vscode
