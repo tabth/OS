@@ -35,3 +35,4 @@
 
 build/iso_root
 .vscode
+build/usr/**

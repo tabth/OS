@@ -20,8 +20,11 @@ endef
 # the host system's toolchain, but this is not guaranteed.
 $(eval $(call DEFAULT_VAR,CC,cc))
 
+INCDIR = include framebuffer
+INC = $(addprefix -I, $(INCDIR))
+
 # User controllable CFLAGS.
-CFLAGS ?= -O2 -g -Wall -Wextra -Wpedantic -pipe
+CFLAGS ?= -O2 -g -Wall -Wextra -Wpedantic -pipe -ffreestanding $(INC)
 
 # User controllable linker flags. We set none by default.
 LDFLAGS ?=

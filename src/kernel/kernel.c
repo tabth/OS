@@ -1,7 +1,8 @@
 #include <stdint.h>
 #include <stddef.h>
 
-#include "include/limine.h"
+#include <kernel/limine.h>
+#include <kernel/bootloader.h>
 
 static volatile struct limine_terminal_request terminal_request = {
     .id = LIMINE_TERMINAL_REQUEST,
@@ -15,7 +16,7 @@ static void done(void) {
 }
 
 // kernel entry
-void _start(void) {
+void _start(BootloaderInfo_t* bootloader) {
     if (terminal_request.response == NULL || terminal_request.response->terminal_count < 1) {
         done();
     }
